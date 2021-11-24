@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Preço de imóvel na cidade de são paulo</title>
+    <style>
+        body {
+            margin: 80px;
+        }
+        
+        form>* {
+            font-size: 20px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="{{url_for('static', filename='senac.png')}}" align="middle" width="80" />
+    <h1>Avaliação de Preço de imóvel na cidade de são paulo</h1>
+    <form action="get_price" method="post">
+        <label for="size">Tamanho m²</label>
+        <input type="number" name="size" id="size">
+        <br>
+        <label for="rooms">Quantidade de quartos</label>
+        <input type="number" name="rooms" id="rooms">
+        <br>
+        <label for="suite">Quartos com suite</label>
+        <input type="number" name="suite" id="suite">
+        <br>
+        <label for="bathroom">Quantidade de banheiros</label>
+        <input type="number" name="bathroom" id="bathroom">
+        <br>
+        <label for="parking_spaces">Quantidade de vagas de estacionamento</label>
+        <input type="number" name="parking_spaces" id="parking_spaces">
+        <br>
+        <input type="submit" value="Avaliar Preços">
+    </form>
+    <h1> {{ price }}</h1>
+</body>
+
+</html>
